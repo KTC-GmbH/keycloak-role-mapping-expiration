@@ -4,6 +4,9 @@ This `keycloak` extension adds an expiration date to the existing
 user role mapping. If the expiration date is reached, the mapping
 will be automatically removed from the database.
 
+# Tested Version
+Keycloak 15.0.2 (20.08.2021)
+
 # API
 
 ###### [GET] /user-role-expirations/api/users/{userId}/user-role-expirations
