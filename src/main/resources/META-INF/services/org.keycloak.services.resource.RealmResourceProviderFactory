@@ -1,0 +1,2 @@
+de.ktc.keycloak.userroleexpiration.controller.UserRoleExpirationResourceProviderFactory
+de.ktc.keycloak.userroleexpiration.controller.RoleExpirationDurationResourceProviderFactory

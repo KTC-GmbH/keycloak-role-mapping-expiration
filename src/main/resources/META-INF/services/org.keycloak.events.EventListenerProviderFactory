@@ -1,0 +1,2 @@
+de.ktc.keycloak.userroleexpiration.service.impl.AddDefaultExpirationDateOnFirstClientUpdateFactory
+de.ktc.keycloak.userroleexpiration.service.impl.AddMappersOnClientUpdateFactory

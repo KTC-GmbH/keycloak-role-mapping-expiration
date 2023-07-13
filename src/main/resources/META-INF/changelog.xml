@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="ktc" id="user-role-expiration-1.0">
+        <validCheckSum>8:b8fbdca9e7dd05a76d532dd0166fb4f2</validCheckSum>
+        <createTable tableName="user_role_mapping_expiration">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USER_ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPIRATION_DATE" type="DATE">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey
+                constraintName="PK_USER_ROLE_MAPPING_EXPIRATION"
+                tableName="user_role_mapping_expiration"
+                columnNames="ID"
+        />
+    </changeSet>
+
+    <changeSet author="ktc" id="user-role-expiration-2.0">
+        <validCheckSum>8:3e2ad9e1d663a8c2ac48be3d556b57c1</validCheckSum>
+        <createTable tableName="user_role_mapping_resellerid">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USER_ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RESELLER_ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey
+                constraintName="PK_USER_ROLE_MAPPING_RESELLERID"
+                tableName="user_role_mapping_resellerid"
+                columnNames="ID"
+        />
+
+        <addDefaultValue
+                columnName="RESELLER_ID"
+                defaultValue="KTC"
+                tableName="user_role_mapping_resellerid"
+        />
+    </changeSet>
+
+    <changeSet author="ktc" id="user-role-expiration-3.0">
+        <validCheckSum>8:0a705b6c0105f135266c1eb3ab381ad1</validCheckSum>
+        <createTable tableName="role_expiration_duration">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROLE_ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="EXPIRATION_DURATION_DAYS" type="INT">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey
+                constraintName="PK_ROLE_EXPIRATION_DURATION_ID"
+                tableName="role_expiration_duration"
+                columnNames="ID"
+        />
+    </changeSet>
+
+    <changeSet author="ktc" id="user-role-expiration-4.0">
+        <validCheckSum>8:7fef8047c3fe004412fa130d13251fb3</validCheckSum>
+        <createTable tableName="user_client_has_auth">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USER_ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CLIENT_ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey
+                constraintName="PK_USER_CLIENT_AUTH_ID"
+                tableName="user_client_has_auth"
+                columnNames="ID"
+        />
+    </changeSet>
+
+</databaseChangeLog>
